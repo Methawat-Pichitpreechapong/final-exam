@@ -30,39 +30,44 @@ class DeliveryOrder:
         self.item = item
         self.status = status
 
-    # def assign_driver(driver):
-    #     pass # Not sure what to do with it
+    def assign_driver(driver):
+        assign_driver = driver
 
     def summary(self):
         return f"""Order Summary:
                 Item: {self.item}
                 Customer: {self.customer}
                 Status: preparing
-                Driver: {self.name}"""
+                Driver: {DeliveryOrder.assign_driver()}"""
 
 
 
 # Main Part
-Customer_1 = Person("Alice")
-Customer_2 = Person("Bob")
-Driver_1 = Driver("David", "Motorcycle")
-Customer_1.introduce()
-Customer_2.introduce()
-Driver_1.introduce()
-print()
+# Customer_1 = Person("Alice")
+# Customer_2 = Person("Bob")
+# Driver_1 = Driver("David", "Motorcycle")
+# Customer_1.introduce()
+# Customer_2.introduce()
+# Driver_1.introduce()
+# print()
 
-item_1 = "Laptop"
-item_2 = "Headphones"
-order_1 = DeliveryOrder(Customer_1, item_1, Driver_1)
-order_2 = DeliveryOrder(Customer_2, item_2, Driver_1)
-print(order_1.summary())
-print(order_2.summary())
-print()
+# item_1 = "Laptop"
+# item_2 = "Headphones"
+# order_1 = DeliveryOrder(Customer_1, item_1, Driver_1)
+# order_2 = DeliveryOrder(Customer_2, item_2, Driver_1)
+# print(order_1.summary())
+# print(order_2.summary())
+# print()
 
-Driver.deliver(Driver_1, item_1)
-Driver.deliver(Driver_1, item_2)
-print()
-print("""Final Status:
-Order for Laptop → delivered
-Order for Headphones → delivered
-""")
+# Driver.deliver(Driver_1, item_1)
+# Driver.deliver(Driver_1, item_2)
+# print()
+# print("""Final Status:
+# Order for Laptop → delivered
+# Order for Headphones → delivered
+# """)
+
+Customer_1 = input("Input first customer name: ")
+Customer_2 = input("Input second customer name: ")
+Driver_1 = input("Input driver name: ")
+DeliveryOrder.assign_driver(Driver_1)
